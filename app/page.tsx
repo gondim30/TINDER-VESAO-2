@@ -113,211 +113,211 @@ export default function SigiloX() {
   const [countrySearch, setCountrySearch] = useState("")
 
   const countries = [
-{ code: "+1", name: "United States", flag: "🇺🇸", placeholder: "(555) 123-4567" },
-{ code: "+1", name: "Canada", flag: "🇨🇦", placeholder: "(555) 123-4567" },
-{ code: "+44", name: "United Kingdom", flag: "🇬🇧", placeholder: "7911 123456" },
-{ code: "+33", name: "France", flag: "🇫🇷", placeholder: "6 12 34 56 78" },
-{ code: "+49", name: "Germany", flag: "🇩🇪", placeholder: "1512 3456789" },
-{ code: "+39", name: "Italy", flag: "🇮🇹", placeholder: "312 345 6789" },
-{ code: "+34", name: "Spain", flag: "🇪🇸", placeholder: "612 34 56 78" },
-{ code: "+351", name: "Portugal", flag: "🇵🇹", placeholder: "912 345 678" },
-{ code: "+52", name: "Mexico", flag: "🇲🇽", placeholder: "55 1234 5678" },
-{ code: "+55", name: "Brazil", flag: "🇧🇷", placeholder: "(11) 99999-9999" },
-{ code: "+54", name: "Argentina", flag: "🇦🇷", placeholder: "11 1234-5678" },
-{ code: "+56", name: "Chile", flag: "🇨🇱", placeholder: "9 1234 5678" },
-{ code: "+57", name: "Colombia", flag: "🇨🇴", placeholder: "300 1234567" },
-{ code: "+51", name: "Peru", flag: "🇵🇪", placeholder: "912 345 678" },
-{ code: "+58", name: "Venezuela", flag: "🇻🇪", placeholder: "412-1234567" },
-{ code: "+593", name: "Ecuador", flag: "🇪🇨", placeholder: "99 123 4567" },
-{ code: "+595", name: "Paraguay", flag: "🇵🇾", placeholder: "961 123456" },
-{ code: "+598", name: "Uruguay", flag: "🇺🇾", placeholder: "94 123 456" },
-{ code: "+591", name: "Bolivia", flag: "🇧🇴", placeholder: "71234567" },
-{ code: "+81", name: "Japan", flag: "🇯🇵", placeholder: "90-1234-5678" },
-{ code: "+82", name: "South Korea", flag: "🇰🇷", placeholder: "10-1234-5678" },
-{ code: "+86", name: "China", flag: "🇨🇳", placeholder: "138 0013 8000" },
-{ code: "+91", name: "India", flag: "🇮🇳", placeholder: "81234 56789" },
-{ code: "+61", name: "Australia", flag: "🇦🇺", placeholder: "412 345 678" },
-{ code: "+64", name: "New Zealand", flag: "🇳🇿", placeholder: "21 123 4567" },
-{ code: "+27", name: "South Africa", flag: "🇿🇦", placeholder: "71 123 4567" },
-{ code: "+20", name: "Egypt", flag: "🇪🇬", placeholder: "100 123 4567" },
-{ code: "+234", name: "Nigeria", flag: "🇳🇬", placeholder: "802 123 4567" },
-{ code: "+254", name: "Kenya", flag: "🇰🇪", placeholder: "712 123456" },
-{ code: "+971", name: "United Arab Emirates", flag: "🇦🇪", placeholder: "50 123 4567" },
-{ code: "+966", name: "Saudi Arabia", flag: "🇸🇦", placeholder: "50 123 4567" },
-{ code: "+90", name: "Turkey", flag: "🇹🇷", placeholder: "501 234 56 78" },
-{ code: "+7", name: "Russia", flag: "🇷🇺", placeholder: "912 345-67-89" },
-{ code: "+380", name: "Ukraine", flag: "🇺🇦", placeholder: "50 123 4567" },
-{ code: "+48", name: "Poland", flag: "🇵🇱", placeholder: "512 345 678" },
-{ code: "+31", name: "Netherlands", flag: "🇳🇱", placeholder: "6 12345678" },
-{ code: "+32", name: "Belgium", flag: "🇧🇪", placeholder: "470 12 34 56" },
-{ code: "+41", name: "Switzerland", flag: "🇨🇭", placeholder: "78 123 45 67" },
-{ code: "+43", name: "Austria", flag: "🇦🇹", placeholder: "664 123456" },
-{ code: "+45", name: "Denmark", flag: "🇩🇰", placeholder: "20 12 34 56" },
-{ code: "+46", name: "Sweden", flag: "🇸🇪", placeholder: "70-123 45 67" },
-{ code: "+47", name: "Norway", flag: "🇳🇴", placeholder: "406 12 345" },
-{ code: "+358", name: "Finland", flag: "🇫🇮", placeholder: "50 123 4567" },
-{ code: "+65", name: "Singapore", flag: "🇸🇬", placeholder: "8123 4567" },
-{ code: "+63", name: "Philippines", flag: "🇵🇭", placeholder: "912 345 6789" },
-{ code: "+62", name: "Indonesia", flag: "🇮🇩", placeholder: "0812 3456 789" },
-{ code: "+60", name: "Malaysia", flag: "🇲🇾", placeholder: "012-345 6789" },
-{ code: "+66", name: "Thailand", flag: "🇹🇭", placeholder: "081 234 5678" },
-{ code: "+84", name: "Vietnam", flag: "🇻🇳", placeholder: "091 234 56 78" },
-{ code: "+92", name: "Pakistan", flag: "🇵🇰", placeholder: "0300 1234567" },
-{ code: "+98", name: "Iran", flag: "🇮🇷", placeholder: "0912 345 6789" },
-{ code: "+94", name: "Sri Lanka", flag: "🇱🇰", placeholder: "071 123 4567" },
-{ code: "+880", name: "Bangladesh", flag: "🇧🇩", placeholder: "01712 345678" },
-{ code: "+855", name: "Cambodia", flag: "🇰🇭", placeholder: "092 123 456" },
-{ code: "+673", name: "Brunei", flag: "🇧🇳", placeholder: "872 1234" },
-{ code: "+679", name: "Fiji", flag: "🇫🇯", placeholder: "920 1234" },
-{ code: "+675", name: "Papua New Guinea", flag: "🇵🇬", placeholder: "723 45678" },
-{ code: "+677", name: "Solomon Islands", flag: "🇸🇧", placeholder: "742 1234" },
-{ code: "+678", name: "Vanuatu", flag: "🇻🇺", placeholder: "778 1234" },
-{ code: "+691", name: "Micronesia", flag: "🇫🇲", placeholder: "920 1234" },
-{ code: "+692", name: "Marshall Islands", flag: "🇲🇭", placeholder: "692 1234" },
-{ code: "+680", name: "Palau", flag: "🇵🇼", placeholder: "620 1234" },
-{ code: "+685", name: "Samoa", flag: "🇼🇸", placeholder: "722 1234" },
-{ code: "+676", name: "Tonga", flag: "🇹🇴", placeholder: "771 1234" },
-{ code: "+682", name: "Cook Islands", flag: "🇨🇰", placeholder: "722 1234" },
-{ code: "+683", name: "Niue", flag: "🇳🇺", placeholder: "811 1234" },
-{ code: "+672", name: "Norfolk Island", flag: "🇳🇫", placeholder: "512 1234" },
-{ code: "+670", name: "Timor-Leste", flag: "🇹🇱", placeholder: "771 1234" },
-{ code: "+688", name: "Tuvalu", flag: "🇹🇻", placeholder: "771 1234" },
-{ code: "+690", name: "Tokelau", flag: "🇹🇰", placeholder: "811 1234" },
-{ code: "+239", name: "Sao Tome and Principe", flag: "🇸🇹", placeholder: "981 1234" },
-{ code: "+240", name: "Equatorial Guinea", flag: "🇬🇶", placeholder: "222 123 456" },
-{ code: "+241", name: "Gabon", flag: "🇬🇦", placeholder: "06 12 34 56 78" },
-{ code: "+242", name: "Republic of the Congo", flag: "🇨🇬", placeholder: "06 123 4567" },
-{ code: "+243", name: "Democratic Republic of the Congo", flag: "🇨🇩", placeholder: "081 123 4567" },
-{ code: "+244", name: "Angola", flag: "🇦🇴", placeholder: "923 123 456" },
-{ code: "+245", name: "Guinea-Bissau", flag: "🇬🇼", placeholder: "955 123 456" },
-{ code: "+246", name: "Diego Garcia", flag: "🇮🇴", placeholder: "380 1234" },
-{ code: "+247", name: "Ascension Island", flag: "🇦🇨", placeholder: "650 1234" },
-{ code: "+248", name: "Seychelles", flag: "🇸🇨", placeholder: "2 510 123" },
-{ code: "+249", name: "Sudan", flag: "🇸🇩", placeholder: "091 123 4567" },
-{ code: "+250", name: "Rwanda", flag: "🇷🇼", placeholder: "072 123 4567" },
-{ code: "+251", name: "Ethiopia", flag: "🇪🇹", placeholder: "091 123 4567" },
-{ code: "+252", name: "Somalia", flag: "🇸🇴", placeholder: "61 123 4567" },
-{ code: "+253", name: "Djibouti", flag: "🇩🇯", placeholder: "77 123 456" },
-{ code: "+255", name: "Tanzania", flag: "🇹🇿", placeholder: "071 123 4567" },
-{ code: "+256", name: "Uganda", flag: "🇺🇬", placeholder: "070 123 4567" },
-{ code: "+257", name: "Burundi", flag: "🇧🇮", placeholder: "79 123 456" },
-{ code: "+258", name: "Mozambique", flag: "🇲🇿", placeholder: "82 123 4567" },
-{ code: "+260", name: "Zambia", flag: "🇿🇲", placeholder: "095 123 4567" },
-{ code: "+261", name: "Madagascar", flag: "🇲🇬", placeholder: "032 12 345 67" },
-{ code: "+262", name: "Reunion", flag: "🇷🇪", placeholder: "0692 12 34 56" },
-{ code: "+263", name: "Zimbabwe", flag: "🇿🇼", placeholder: "071 123 456" },
-{ code: "+264", name: "Namibia", flag: "🇳🇦", placeholder: "081 123 4567" },
-{ code: "+265", name: "Malawi", flag: "🇲🇼", placeholder: "099 123 4567" },
-{ code: "+266", name: "Lesotho", flag: "🇱🇸", placeholder: "501 123 456" },
-{ code: "+267", name: "Botswana", flag: "🇧🇼", placeholder: "71 123 456" },
-{ code: "+268", name: "Eswatini", flag: "🇸🇿", placeholder: "761 123 456" },
-{ code: "+269", name: "Comoros", flag: "🇰🇲", placeholder: "321 1234" },
-{ code: "+290", name: "Saint Helena", flag: "🇸🇭", placeholder: "659 1234" },
-{ code: "+291", name: "Eritrea", flag: "🇪🇷", placeholder: "07 123 456" },
-{ code: "+297", name: "Aruba", flag: "🇦🇼", placeholder: "560 1234" },
-{ code: "+298", name: "Faroe Islands", flag: "🇫🇴", placeholder: "211234" },
-{ code: "+299", name: "Greenland", flag: "🇬🇱", placeholder: "221234" },
-{ code: "+350", name: "Gibraltar", flag: "🇬🇮", placeholder: "571 12345" },
-{ code: "+351", name: "Portugal", flag: "🇵🇹", placeholder: "912 345 678" },
-{ code: "+352", name: "Luxembourg", flag: "🇱🇺", placeholder: "621 123 456" },
-{ code: "+353", name: "Ireland", flag: "🇮🇪", placeholder: "083 123 4567" },
-{ code: "+354", name: "Iceland", flag: "🇮🇸", placeholder: "611 1234" },
-{ code: "+355", name: "Albania", flag: "🇦🇱", placeholder: "067 123 4567" },
-{ code: "+356", name: "Malta", flag: "🇲🇹", placeholder: "799 12345" },
-{ code: "+357", name: "Cyprus", flag: "🇨🇾", placeholder: "961 12345" },
-{ code: "+358", name: "Finland", flag: "🇫🇮", placeholder: "50 123 4567" },
-{ code: "+359", name: "Bulgaria", flag: "🇧🇬", placeholder: "088 123 4567" },
-{ code: "+370", name: "Lithuania", flag: "🇱🇹", placeholder: "601 12345" },
-{ code: "+371", name: "Latvia", flag: "🇱🇻", placeholder: "200 12345" },
-{ code: "+372", name: "Estonia", flag: "🇪🇪", placeholder: "501 1234" },
-{ code: "+373", name: "Moldova", flag: "🇲🇩", placeholder: "068 123 456" },
-{ code: "+374", name: "Armenia", flag: "🇦🇲", placeholder: "091 123 456" },
-{ code: "+375", name: "Belarus", flag: "🇧🇾", placeholder: "029 123 4567" },
-{ code: "+376", name: "Andorra", flag: "🇦🇩", placeholder: "606 123 456" },
-{ code: "+377", name: "Monaco", flag: "🇲🇨", placeholder: "06 12 34 56 78" },
-{ code: "+378", name: "San Marino", flag: "🇸🇲", placeholder: "333 123456" },
-{ code: "+379", name: "Vatican City", flag: "🇻🇦", placeholder: "333 123456" },
-{ code: "+381", name: "Serbia", flag: "🇷🇸", placeholder: "061 123 4567" },
-{ code: "+382", name: "Montenegro", flag: "🇲🇪", placeholder: "067 123 456" },
-{ code: "+383", name: "Kosovo", flag: "🇽🇰", placeholder: "049 123 456" },
-{ code: "+385", name: "Croatia", flag: "🇭🇷", placeholder: "091 123 4567" },
-{ code: "+386", name: "Slovenia", flag: "🇸🇮", placeholder: "031 123 456" },
-{ code: "+387", name: "Bosnia and Herzegovina", flag: "🇧🇦", placeholder: "061 123 456" },
-{ code: "+389", name: "North Macedonia", flag: "🇲🇰", placeholder: "070 123 456" },
-{ code: "+420", name: "Czech Republic", flag: "🇨🇿", placeholder: "601 123 456" },
-{ code: "+421", name: "Slovakia", flag: "🇸🇰", placeholder: "0911 123 456" },
-{ code: "+423", name: "Liechtenstein", flag: "🇱🇮", placeholder: "660 123 456" },
-{ code: "+500", name: "Falkland Islands", flag: "🇫🇰", placeholder: "51234" },
-{ code: "+501", name: "Belize", flag: "🇧🇿", placeholder: "622 1234" },
-{ code: "+502", name: "Guatemala", flag: "🇬🇹", placeholder: "5512 3456" },
-{ code: "+503", name: "El Salvador", flag: "🇸🇻", placeholder: "7012 3456" },
-{ code: "+504", name: "Honduras", flag: "🇭🇳", placeholder: "9123 4567" },
-{ code: "+505", name: "Nicaragua", flag: "🇳🇮", placeholder: "8712 3456" },
-{ code: "+506", name: "Costa Rica", flag: "🇨🇷", placeholder: "8312 3456" },
-{ code: "+507", name: "Panama", flag: "🇵🇦", placeholder: "6712 3456" },
-{ code: "+508", name: "Saint Pierre and Miquelon", flag: "🇵🇲", placeholder: "551 1234" },
-{ code: "+509", name: "Haiti", flag: "🇭🇹", placeholder: "3412 3456" },
-{ code: "+590", name: "Guadeloupe", flag: "🇬🇵", placeholder: "0690 12 34 56" },
-{ code: "+591", name: "Bolivia", flag: "🇧🇴", placeholder: "71234567" },
-{ code: "+592", name: "Guyana", flag: "🇬🇾", placeholder: "612 3456" },
-{ code: "+593", name: "Ecuador", flag: "🇪🇨", placeholder: "99 123 4567" },
-{ code: "+594", name: "French Guiana", flag: "🇬🇫", placeholder: "0694 12 34 56" },
-{ code: "+595", name: "Paraguay", flag: "🇵🇾", placeholder: "961 123456" },
-{ code: "+596", name: "Martinique", flag: "🇲🇶", placeholder: "0696 12 34 56" },
-{ code: "+597", name: "Suriname", flag: "🇸🇷", placeholder: "741 1234" },
-{ code: "+598", name: "Uruguay", flag: "🇺🇾", placeholder: "94 123 456" },
-{ code: "+599", name: "Curaçao", flag: "🇨🇼", placeholder: "9 561 1234" },
-{ code: "+670", name: "Timor-Leste", flag: "🇹🇱", placeholder: "771 1234" },
-{ code: "+672", name: "Australian Antarctic Territory", flag: "🇦🇶", placeholder: "512 1234" },
-{ code: "+673", name: "Brunei", flag: "🇧🇳", placeholder: "872 1234" },
-{ code: "+674", name: "Nauru", flag: "🇳🇷", placeholder: "555 1234" },
-{ code: "+675", name: "Papua New Guinea", flag: "🇵🇬", placeholder: "723 45678" },
-{ code: "+676", name: "Tonga", flag: "🇹🇴", placeholder: "771 1234" },
-{ code: "+677", name: "Solomon Islands", flag: "🇸🇧", placeholder: "742 1234" },
-{ code: "+678", name: "Vanuatu", flag: "🇻🇺", placeholder: "778 1234" },
-{ code: "+679", name: "Fiji", flag: "🇫🇯", placeholder: "920 1234" },
-{ code: "+680", name: "Palau", flag: "🇵🇼", placeholder: "620 1234" },
-{ code: "+681", name: "Wallis and Futuna", flag: "🇼🇫", placeholder: "721 1234" },
-{ code: "+682", name: "Cook Islands", flag: "🇨🇰", placeholder: "722 1234" },
-{ code: "+683", name: "Niue", flag: "🇳🇺", placeholder: "811 1234" },
-{ code: "+685", name: "Samoa", flag: "🇼🇸", placeholder: "722 1234" },
-{ code: "+686", name: "Kiribati", flag: "🇰🇮", placeholder: "720 1234" },
-{ code: "+687", name: "New Caledonia", flag: "🇳🇨", placeholder: "750 1234" },
-{ code: "+688", name: "Tuvalu", flag: "🇹🇻", placeholder: "771 1234" },
-{ code: "+689", name: "French Polynesia", flag: "🇵🇫", placeholder: "87 12 34 56" },
-{ code: "+690", name: "Tokelau", flag: "🇹🇰", placeholder: "811 1234" },
-{ code: "+691", name: "Micronesia", flag: "🇫🇲", placeholder: "920 1234" },
-{ code: "+692", name: "Marshall Islands", flag: "🇲🇭", placeholder: "692 1234" },
-{ code: "+850", name: "North Korea", flag: "🇰🇵", placeholder: "191 123 4567" },
-{ code: "+852", name: "Hong Kong", flag: "🇭🇰", placeholder: "6123 4567" },
-{ code: "+853", name: "Macau", flag: "🇲🇴", placeholder: "6612 3456" },
-{ code: "+855", name: "Cambodia", flag: "🇰🇭", placeholder: "092 123 456" },
-{ code: "+856", name: "Laos", flag: "🇱🇦", placeholder: "020 1234 5678" },
-{ code: "+880", name: "Bangladesh", flag: "🇧🇩", placeholder: "01712 345678" },
-{ code: "+886", name: "Taiwan", flag: "🇹🇼", placeholder: "0912 345 678" },
-{ code: "+960", name: "Maldives", flag: "🇲🇻", placeholder: "777 1234" },
-{ code: "+961", name: "Lebanon", flag: "🇱🇧", placeholder: "03 123 456" },
-{ code: "+962", name: "Jordan", flag: "🇯🇴", placeholder: "079 123 4567" },
-{ code: "+963", name: "Syria", flag: "🇸🇾", placeholder: "093 123 456" },
-{ code: "+964", name: "Iraq", flag: "🇮🇶", placeholder: "0790 123 4567" },
-{ code: "+965", name: "Kuwait", flag: "🇰🇼", placeholder: "600 12345" },
-{ code: "+966", name: "Saudi Arabia", flag: "🇸🇦", placeholder: "50 123 4567" },
-{ code: "+967", name: "Yemen", flag: "🇾🇪", placeholder: "711 123 456" },
-{ code: "+968", name: "Oman", flag: "🇴🇲", placeholder: "921 12345" },
-{ code: "+970", name: "Palestine", flag: "🇵🇸", placeholder: "0599 123 456" },
-{ code: "+971", name: "United Arab Emirates", flag: "🇦🇪", placeholder: "50 123 4567" },
-{ code: "+972", name: "Israel", flag: "🇮🇱", placeholder: "052-123-4567" },
-{ code: "+973", name: "Bahrain", flag: "🇧🇭", placeholder: "3600 1234" },
-{ code: "+974", name: "Qatar", flag: "🇶🇦", placeholder: "3312 3456" },
-{ code: "+975", name: "Bhutan", flag: "🇧🇹", placeholder: "17 123 456" },
-{ code: "+976", name: "Mongolia", flag: "🇲🇳", placeholder: "8812 3456" },
-{ code: "+977", name: "Nepal", flag: "🇳🇵", placeholder: "984 123 4567" },
-{ code: "+992", name: "Tajikistan", flag: "🇹🇯", placeholder: "917 123 456" },
-{ code: "+993", name: "Turkmenistan", flag: "🇹🇲", placeholder: "66 123 4567" },
-{ code: "+994", name: "Azerbaijan", flag: "🇦🇿", placeholder: "050 123 45 67" },
-{ code: "+995", name: "Georgia", flag: "🇬🇪", placeholder: "555 12 34 56" },
-{ code: "+996", name: "Kyrgyzstan", flag: "🇰🇬", placeholder: "0700 123 456" },
-{ code: "+998", name: "Uzbekistan", flag: "🇺🇿", placeholder: "90 123 45 67" }
+    { code: "+1", name: "United States", flag: "🇺🇸", placeholder: "(555) 123-4567" },
+    { code: "+1", name: "Canada", flag: "🇨🇦", placeholder: "(555) 123-4567" },
+    { code: "+44", name: "United Kingdom", flag: "🇬🇧", placeholder: "7911 123456" },
+    { code: "+33", name: "France", flag: "🇫🇷", placeholder: "6 12 34 56 78" },
+    { code: "+49", name: "Germany", flag: "🇩🇪", placeholder: "1512 3456789" },
+    { code: "+39", name: "Italy", flag: "🇮🇹", placeholder: "312 345 6789" },
+    { code: "+34", name: "Spain", flag: "🇪🇸", placeholder: "612 34 56 78" },
+    { code: "+351", name: "Portugal", flag: "🇵🇹", placeholder: "912 345 678" },
+    { code: "+52", name: "Mexico", flag: "🇲🇽", placeholder: "55 1234 5678" },
+    { code: "+55", name: "Brazil", flag: "🇧🇷", placeholder: "(11) 99999-9999" },
+    { code: "+54", name: "Argentina", flag: "🇦🇷", placeholder: "11 1234-5678" },
+    { code: "+56", name: "Chile", flag: "🇨🇱", placeholder: "9 1234 5678" },
+    { code: "+57", name: "Colombia", flag: "🇨🇴", placeholder: "300 1234567" },
+    { code: "+51", name: "Peru", flag: "🇵🇪", placeholder: "912 345 678" },
+    { code: "+58", name: "Venezuela", flag: "🇻🇪", placeholder: "412-1234567" },
+    { code: "+593", name: "Ecuador", flag: "🇪🇨", placeholder: "99 123 4567" },
+    { code: "+595", name: "Paraguay", flag: "🇵🇾", placeholder: "961 123456" },
+    { code: "+598", name: "Uruguay", flag: "🇺🇾", placeholder: "94 123 456" },
+    { code: "+591", name: "Bolivia", flag: "🇧🇴", placeholder: "71234567" },
+    { code: "+81", name: "Japan", flag: "🇯🇵", placeholder: "90-1234-5678" },
+    { code: "+82", name: "South Korea", flag: "🇰🇷", placeholder: "10-1234-5678" },
+    { code: "+86", name: "China", flag: "🇨🇳", placeholder: "138 0013 8000" },
+    { code: "+91", name: "India", flag: "🇮🇳", placeholder: "81234 56789" },
+    { code: "+61", name: "Australia", flag: "🇦🇺", placeholder: "412 345 678" },
+    { code: "+64", name: "New Zealand", flag: "🇳🇿", placeholder: "21 123 4567" },
+    { code: "+27", name: "South Africa", flag: "🇿🇦", placeholder: "71 123 4567" },
+    { code: "+20", name: "Egypt", flag: "🇪🇬", placeholder: "100 123 4567" },
+    { code: "+234", name: "Nigeria", flag: "🇳🇬", placeholder: "802 123 4567" },
+    { code: "+254", name: "Kenya", flag: "🇰🇪", placeholder: "712 123456" },
+    { code: "+971", name: "United Arab Emirates", flag: "🇦🇪", placeholder: "50 123 4567" },
+    { code: "+966", name: "Saudi Arabia", flag: "🇸🇦", placeholder: "50 123 4567" },
+    { code: "+90", name: "Turkey", flag: "🇹🇷", placeholder: "501 234 56 78" },
+    { code: "+7", name: "Russia", flag: "🇷🇺", placeholder: "912 345-67-89" },
+    { code: "+380", name: "Ukraine", flag: "🇺🇦", placeholder: "50 123 4567" },
+    { code: "+48", name: "Poland", flag: "🇵🇱", placeholder: "512 345 678" },
+    { code: "+31", name: "Netherlands", flag: "🇳🇱", placeholder: "6 12345678" },
+    { code: "+32", name: "Belgium", flag: "🇧🇪", placeholder: "470 12 34 56" },
+    { code: "+41", name: "Switzerland", flag: "🇨🇭", placeholder: "78 123 45 67" },
+    { code: "+43", name: "Austria", flag: "🇦🇹", placeholder: "664 123456" },
+    { code: "+45", name: "Denmark", flag: "🇩🇰", placeholder: "20 12 34 56" },
+    { code: "+46", name: "Sweden", flag: "🇸🇪", placeholder: "70-123 45 67" },
+    { code: "+47", name: "Norway", flag: "🇳🇴", placeholder: "406 12 345" },
+    { code: "+358", name: "Finland", flag: "🇫🇮", placeholder: "50 123 4567" },
+    { code: "+65", name: "Singapore", flag: "🇸🇬", placeholder: "8123 4567" },
+    { code: "+63", name: "Philippines", flag: "🇵🇭", placeholder: "912 345 6789" },
+    { code: "+62", name: "Indonesia", flag: "🇮🇩", placeholder: "0812 3456 789" },
+    { code: "+60", name: "Malaysia", flag: "🇲🇾", placeholder: "012-345 6789" },
+    { code: "+66", name: "Thailand", flag: "🇹🇭", placeholder: "081 234 5678" },
+    { code: "+84", name: "Vietnam", flag: "🇻🇳", placeholder: "091 234 56 78" },
+    { code: "+92", name: "Pakistan", flag: "🇵🇰", placeholder: "0300 1234567" },
+    { code: "+98", name: "Iran", flag: "🇮🇷", placeholder: "0912 345 6789" },
+    { code: "+94", name: "Sri Lanka", flag: "🇱🇰", placeholder: "071 123 4567" },
+    { code: "+880", name: "Bangladesh", flag: "🇧🇩", placeholder: "01712 345678" },
+    { code: "+855", name: "Cambodia", flag: "🇰🇭", placeholder: "092 123 456" },
+    { code: "+673", name: "Brunei", flag: "🇧🇳", placeholder: "872 1234" },
+    { code: "+679", name: "Fiji", flag: "🇫🇯", placeholder: "920 1234" },
+    { code: "+675", name: "Papua New Guinea", flag: "🇵🇬", placeholder: "723 45678" },
+    { code: "+677", name: "Solomon Islands", flag: "🇸🇧", placeholder: "742 1234" },
+    { code: "+678", name: "Vanuatu", flag: "🇻🇺", placeholder: "778 1234" },
+    { code: "+691", name: "Micronesia", flag: "🇫🇲", placeholder: "920 1234" },
+    { code: "+692", name: "Marshall Islands", flag: "🇲🇭", placeholder: "692 1234" },
+    { code: "+680", name: "Palau", flag: "🇵🇼", placeholder: "620 1234" },
+    { code: "+685", name: "Samoa", flag: "🇼🇸", placeholder: "722 1234" },
+    { code: "+676", name: "Tonga", flag: "🇹🇴", placeholder: "771 1234" },
+    { code: "+682", name: "Cook Islands", flag: "🇨🇰", placeholder: "722 1234" },
+    { code: "+683", name: "Niue", flag: "🇳🇺", placeholder: "811 1234" },
+    { code: "+672", name: "Norfolk Island", flag: "🇳🇫", placeholder: "512 1234" },
+    { code: "+670", name: "Timor-Leste", flag: "🇹🇱", placeholder: "771 1234" },
+    { code: "+688", name: "Tuvalu", flag: "🇹🇻", placeholder: "771 1234" },
+    { code: "+690", name: "Tokelau", flag: "🇹🇰", placeholder: "811 1234" },
+    { code: "+239", name: "Sao Tome and Principe", flag: "🇸🇹", placeholder: "981 1234" },
+    { code: "+240", name: "Equatorial Guinea", flag: "🇬🇶", placeholder: "222 123 456" },
+    { code: "+241", name: "Gabon", flag: "🇬🇦", placeholder: "06 12 34 56 78" },
+    { code: "+242", name: "Republic of the Congo", flag: "🇨🇬", placeholder: "06 123 4567" },
+    { code: "+243", name: "Democratic Republic of the Congo", flag: "🇨🇩", placeholder: "081 123 4567" },
+    { code: "+244", name: "Angola", flag: "🇦🇴", placeholder: "923 123 456" },
+    { code: "+245", name: "Guinea-Bissau", flag: "🇬🇼", placeholder: "955 123 456" },
+    { code: "+246", name: "Diego Garcia", flag: "🇮🇴", placeholder: "380 1234" },
+    { code: "+247", name: "Ascension Island", flag: "🇦🇨", placeholder: "650 1234" },
+    { code: "+248", name: "Seychelles", flag: "🇸🇨", placeholder: "2 510 123" },
+    { code: "+249", name: "Sudan", flag: "🇸🇩", placeholder: "091 123 4567" },
+    { code: "+250", name: "Rwanda", flag: "🇷🇼", placeholder: "072 123 4567" },
+    { code: "+251", name: "Ethiopia", flag: "🇪🇹", placeholder: "091 123 4567" },
+    { code: "+252", name: "Somalia", flag: "🇸🇴", placeholder: "61 123 4567" },
+    { code: "+253", name: "Djibouti", flag: "🇩🇯", placeholder: "77 123 456" },
+    { code: "+255", name: "Tanzania", flag: "🇹🇿", placeholder: "071 123 4567" },
+    { code: "+256", name: "Uganda", flag: "🇺🇬", placeholder: "070 123 4567" },
+    { code: "+257", name: "Burundi", flag: "🇧🇮", placeholder: "79 123 456" },
+    { code: "+258", name: "Mozambique", flag: "🇲🇿", placeholder: "82 123 4567" },
+    { code: "+260", name: "Zambia", flag: "🇿🇲", placeholder: "095 123 4567" },
+    { code: "+261", name: "Madagascar", flag: "🇲🇬", placeholder: "032 12 345 67" },
+    { code: "+262", name: "Reunion", flag: "🇷🇪", placeholder: "0692 12 34 56" },
+    { code: "+263", name: "Zimbabwe", flag: "🇿🇼", placeholder: "071 123 456" },
+    { code: "+264", name: "Namibia", flag: "🇳🇦", placeholder: "081 123 4567" },
+    { code: "+265", name: "Malawi", flag: "🇲🇼", placeholder: "099 123 4567" },
+    { code: "+266", name: "Lesotho", flag: "🇱🇸", placeholder: "501 123 456" },
+    { code: "+267", name: "Botswana", flag: "🇧🇼", placeholder: "71 123 456" },
+    { code: "+268", name: "Eswatini", flag: "🇸🇿", placeholder: "761 123 456" },
+    { code: "+269", name: "Comoros", flag: "🇰🇲", placeholder: "321 1234" },
+    { code: "+290", name: "Saint Helena", flag: "🇸🇭", placeholder: "659 1234" },
+    { code: "+291", name: "Eritrea", flag: "🇪🇷", placeholder: "07 123 456" },
+    { code: "+297", name: "Aruba", flag: "🇦🇼", placeholder: "560 1234" },
+    { code: "+298", name: "Faroe Islands", flag: "🇫🇴", placeholder: "211234" },
+    { code: "+299", name: "Greenland", flag: "🇬🇱", placeholder: "221234" },
+    { code: "+350", name: "Gibraltar", flag: "🇬🇮", placeholder: "571 12345" },
+    { code: "+351", name: "Portugal", flag: "🇵🇹", placeholder: "912 345 678" },
+    { code: "+352", name: "Luxembourg", flag: "🇱🇺", placeholder: "621 123 456" },
+    { code: "+353", name: "Ireland", flag: "🇮🇪", placeholder: "083 123 4567" },
+    { code: "+354", name: "Iceland", flag: "🇮🇸", placeholder: "611 1234" },
+    { code: "+355", name: "Albania", flag: "🇦🇱", placeholder: "067 123 4567" },
+    { code: "+356", name: "Malta", flag: "🇲🇹", placeholder: "799 12345" },
+    { code: "+357", name: "Cyprus", flag: "🇨🇾", placeholder: "961 12345" },
+    { code: "+358", name: "Finland", flag: "🇫🇮", placeholder: "50 123 4567" },
+    { code: "+359", name: "Bulgaria", flag: "🇧🇬", placeholder: "088 123 4567" },
+    { code: "+370", name: "Lithuania", flag: "🇱🇹", placeholder: "601 12345" },
+    { code: "+371", name: "Latvia", flag: "🇱🇻", placeholder: "200 12345" },
+    { code: "+372", name: "Estonia", flag: "🇪🇪", placeholder: "501 1234" },
+    { code: "+373", name: "Moldova", flag: "🇲🇩", placeholder: "068 123 456" },
+    { code: "+374", name: "Armenia", flag: "🇦🇲", placeholder: "091 123 456" },
+    { code: "+375", name: "Belarus", flag: "🇧🇾", placeholder: "029 123 4567" },
+    { code: "+376", name: "Andorra", flag: "🇦🇩", placeholder: "606 123 456" },
+    { code: "+377", name: "Monaco", flag: "🇲🇨", placeholder: "06 12 34 56 78" },
+    { code: "+378", name: "San Marino", flag: "🇸🇲", placeholder: "333 123456" },
+    { code: "+379", name: "Vatican City", flag: "🇻🇦", placeholder: "333 123456" },
+    { code: "+381", name: "Serbia", flag: "🇷🇸", placeholder: "061 123 4567" },
+    { code: "+382", name: "Montenegro", flag: "🇲🇪", placeholder: "067 123 456" },
+    { code: "+383", name: "Kosovo", flag: "🇽🇰", placeholder: "049 123 456" },
+    { code: "+385", name: "Croatia", flag: "🇭🇷", placeholder: "091 123 4567" },
+    { code: "+386", name: "Slovenia", flag: "🇸🇮", placeholder: "031 123 456" },
+    { code: "+387", name: "Bosnia and Herzegovina", flag: "🇧🇦", placeholder: "061 123 456" },
+    { code: "+389", name: "North Macedonia", flag: "🇲🇰", placeholder: "070 123 456" },
+    { code: "+420", name: "Czech Republic", flag: "🇨🇿", placeholder: "601 123 456" },
+    { code: "+421", name: "Slovakia", flag: "🇸🇰", placeholder: "0911 123 456" },
+    { code: "+423", name: "Liechtenstein", flag: "🇱🇮", placeholder: "660 123 456" },
+    { code: "+500", name: "Falkland Islands", flag: "🇫🇰", placeholder: "51234" },
+    { code: "+501", name: "Belize", flag: "🇧🇿", placeholder: "622 1234" },
+    { code: "+502", name: "Guatemala", flag: "🇬🇹", placeholder: "5512 3456" },
+    { code: "+503", name: "El Salvador", flag: "🇸🇻", placeholder: "7012 3456" },
+    { code: "+504", name: "Honduras", flag: "🇭🇳", placeholder: "9123 4567" },
+    { code: "+505", name: "Nicaragua", flag: "🇳🇮", placeholder: "8712 3456" },
+    { code: "+506", name: "Costa Rica", flag: "🇨🇷", placeholder: "8312 3456" },
+    { code: "+507", name: "Panama", flag: "🇵🇦", placeholder: "6712 3456" },
+    { code: "+508", name: "Saint Pierre and Miquelon", flag: "🇵🇲", placeholder: "551 1234" },
+    { code: "+509", name: "Haiti", flag: "🇭🇹", placeholder: "3412 3456" },
+    { code: "+590", name: "Guadeloupe", flag: "🇬🇵", placeholder: "0690 12 34 56" },
+    { code: "+591", name: "Bolivia", flag: "🇧🇴", placeholder: "71234567" },
+    { code: "+592", name: "Guyana", flag: "🇬🇾", placeholder: "612 3456" },
+    { code: "+593", name: "Ecuador", flag: "🇪🇨", placeholder: "99 123 4567" },
+    { code: "+594", name: "French Guiana", flag: "🇬🇫", placeholder: "0694 12 34 56" },
+    { code: "+595", name: "Paraguay", flag: "🇵🇾", placeholder: "961 123456" },
+    { code: "+596", name: "Martinique", flag: "🇲🇶", placeholder: "0696 12 34 56" },
+    { code: "+597", name: "Suriname", flag: "🇸🇷", placeholder: "741 1234" },
+    { code: "+598", name: "Uruguay", flag: "🇺🇾", placeholder: "94 123 456" },
+    { code: "+599", name: "Curaçao", flag: "🇨🇼", placeholder: "9 561 1234" },
+    { code: "+670", name: "Timor-Leste", flag: "🇹🇱", placeholder: "771 1234" },
+    { code: "+672", name: "Australian Antarctic Territory", flag: "🇦🇶", placeholder: "512 1234" },
+    { code: "+673", name: "Brunei", flag: "🇧🇳", placeholder: "872 1234" },
+    { code: "+674", name: "Nauru", flag: "🇳🇷", placeholder: "555 1234" },
+    { code: "+675", name: "Papua New Guinea", flag: "🇵🇬", placeholder: "723 45678" },
+    { code: "+676", name: "Tonga", flag: "🇹🇴", placeholder: "771 1234" },
+    { code: "+677", name: "Solomon Islands", flag: "🇸🇧", placeholder: "742 1234" },
+    { code: "+678", name: "Vanuatu", flag: "🇻🇺", placeholder: "778 1234" },
+    { code: "+679", name: "Fiji", flag: "🇫🇯", placeholder: "920 1234" },
+    { code: "+680", name: "Palau", flag: "🇵🇼", placeholder: "620 1234" },
+    { code: "+681", name: "Wallis and Futuna", flag: "🇼🇫", placeholder: "721 1234" },
+    { code: "+682", name: "Cook Islands", flag: "🇨🇰", placeholder: "722 1234" },
+    { code: "+683", name: "Niue", flag: "🇳🇺", placeholder: "811 1234" },
+    { code: "+685", name: "Samoa", flag: "🇼🇸", placeholder: "722 1234" },
+    { code: "+686", name: "Kiribati", flag: "🇰🇮", placeholder: "720 1234" },
+    { code: "+687", name: "New Caledonia", flag: "🇳🇨", placeholder: "750 1234" },
+    { code: "+688", name: "Tuvalu", flag: "🇹🇻", placeholder: "771 1234" },
+    { code: "+689", name: "French Polynesia", flag: "🇵🇫", placeholder: "87 12 34 56" },
+    { code: "+690", name: "Tokelau", flag: "🇹🇰", placeholder: "811 1234" },
+    { code: "+691", name: "Micronesia", flag: "🇫🇲", placeholder: "920 1234" },
+    { code: "+692", name: "Marshall Islands", flag: "🇲🇭", placeholder: "692 1234" },
+    { code: "+850", name: "North Korea", flag: "🇰🇵", placeholder: "191 123 4567" },
+    { code: "+852", name: "Hong Kong", flag: "🇭🇰", placeholder: "6123 4567" },
+    { code: "+853", name: "Macau", flag: "🇲🇴", placeholder: "6612 3456" },
+    { code: "+855", name: "Cambodia", flag: "🇰🇭", placeholder: "092 123 456" },
+    { code: "+856", name: "Laos", flag: "🇱🇦", placeholder: "020 1234 5678" },
+    { code: "+880", name: "Bangladesh", flag: "🇧🇩", placeholder: "01712 345678" },
+    { code: "+886", name: "Taiwan", flag: "🇹🇼", placeholder: "0912 345 678" },
+    { code: "+960", name: "Maldives", flag: "🇲🇻", placeholder: "777 1234" },
+    { code: "+961", name: "Lebanon", flag: "🇱🇧", placeholder: "03 123 456" },
+    { code: "+962", name: "Jordan", flag: "🇯🇴", placeholder: "079 123 4567" },
+    { code: "+963", name: "Syria", flag: "🇸🇾", placeholder: "093 123 456" },
+    { code: "+964", name: "Iraq", flag: "🇮🇶", placeholder: "0790 123 4567" },
+    { code: "+965", name: "Kuwait", flag: "🇰🇼", placeholder: "600 12345" },
+    { code: "+966", name: "Saudi Arabia", flag: "🇸🇦", placeholder: "50 123 4567" },
+    { code: "+967", name: "Yemen", flag: "🇾🇪", placeholder: "711 123 456" },
+    { code: "+968", name: "Oman", flag: "🇴🇲", placeholder: "921 12345" },
+    { code: "+970", name: "Palestine", flag: "🇵🇸", placeholder: "0599 123 456" },
+    { code: "+971", name: "United Arab Emirates", flag: "🇦🇪", placeholder: "50 123 4567" },
+    { code: "+972", name: "Israel", flag: "🇮🇱", placeholder: "052-123-4567" },
+    { code: "+973", name: "Bahrain", flag: "🇧🇭", placeholder: "3600 1234" },
+    { code: "+974", name: "Qatar", flag: "🇶🇦", placeholder: "3312 3456" },
+    { code: "+975", name: "Bhutan", flag: "🇧🇹", placeholder: "17 123 456" },
+    { code: "+976", name: "Mongolia", flag: "🇲🇳", placeholder: "8812 3456" },
+    { code: "+977", name: "Nepal", flag: "🇳🇵", placeholder: "984 123 4567" },
+    { code: "+992", name: "Tajikistan", flag: "🇹🇯", placeholder: "917 123 456" },
+    { code: "+993", name: "Turkmenistan", flag: "🇹🇲", placeholder: "66 123 4567" },
+    { code: "+994", name: "Azerbaijan", flag: "🇦🇿", placeholder: "050 123 45 67" },
+    { code: "+995", name: "Georgia", flag: "🇬🇪", placeholder: "555 12 34 56" },
+    { code: "+996", name: "Kyrgyzstan", flag: "🇰🇬", placeholder: "0700 123 456" },
+    { code: "+998", name: "Uzbekistan", flag: "🇺🇿", placeholder: "90 123 45 67" },
   ]
 
   const filteredCountries = countries.filter(
@@ -519,45 +519,45 @@ export default function SigiloX() {
     setPhotoError("")
 
     try {
-  const response = await fetch("/api/whatsapp-photo", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ phone: phone }),
-  })
+      const response = await fetch("/api/whatsapp-photo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ phone: phone }),
+      })
 
-  // --- NEW robust handling (replaces old !response.ok throw) ---
-  let data: any = null
+      // --- NEW robust handling (replaces old !response.ok throw) ---
+      let data: any = null
 
-  try {
-    data = await response.json()
-  } catch {
-    // if the body is not valid JSON we still want to fall back safely
-    data = {}
-  }
+      try {
+        data = await response.json()
+      } catch {
+        // if the body is not valid JSON we still want to fall back safely
+        data = {}
+      }
 
-  // When the API answers with non-200 we still carry on with a safe payload
-  if (!response.ok || !data?.success) {
-    setProfilePhoto(
-      "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
-    )
-    setIsPhotoPrivate(true)
-    setPhotoError("Could not load photo")
-    return
-  }
+      // When the API answers with non-200 we still carry on with a safe payload
+      if (!response.ok || !data?.success) {
+        setProfilePhoto(
+          "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
+        )
+        setIsPhotoPrivate(true)
+        setPhotoError("Could not load photo")
+        return
+      }
 
-  // ✅ Successful, public photo
-  setProfilePhoto(data.result)
-  setIsPhotoPrivate(!!data.is_photo_private)
-} catch (error) {
-  console.error("Erro ao buscar foto:", error)
-  setProfilePhoto(
-    "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
-  )
-  setIsPhotoPrivate(true)
-  setPhotoError("Error loading photo")
-} finally {
+      // ✅ Successful, public photo
+      setProfilePhoto(data.result)
+      setIsPhotoPrivate(!!data.is_photo_private)
+    } catch (error) {
+      console.error("Erro ao buscar foto:", error)
+      setProfilePhoto(
+        "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
+      )
+      setIsPhotoPrivate(true)
+      setPhotoError("Error loading photo")
+    } finally {
       setIsLoadingPhoto(false)
     }
   }
@@ -911,14 +911,13 @@ export default function SigiloX() {
                   className="text-center mb-12 sm:mb-16 px-4"
                 >
                   <Button
-  onClick={() => setCurrentStep("form")}
-  className="bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-4 sm:py-6 px-6 sm:px-8 text-sm sm:text-base md:text-lg rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 w-full max-w-md mx-auto flex items-center justify-center text-center overflow-hidden"
->
-  <span className="block text-center leading-tight px-2 break-words whitespace-normal">
-    🔍 GET THE TRUTH – START ANONYMOUS SEARCH
-  </span>
-</Button>
-
+                    onClick={() => setCurrentStep("form")}
+                    className="bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-4 sm:py-6 px-6 sm:px-8 text-sm sm:text-base md:text-lg rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 w-full max-w-md mx-auto flex items-center justify-center text-center overflow-hidden"
+                  >
+                    <span className="block text-center leading-tight px-2 break-words whitespace-normal">
+                      🔍 GET THE TRUTH – START ANONYMOUS SEARCH
+                    </span>
+                  </Button>
 
                   <p className="text-sm text-gray-300 mt-4 font-medium">
                     100% anonymous investigation. They'll never know you checked.
@@ -1090,13 +1089,13 @@ export default function SigiloX() {
 
                     {/* Single CTA Button - Fixed Text Overflow */}
                     <Button
-  onClick={() => setCurrentStep("form")}
-  className="bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-3 sm:py-4 px-4 sm:px-6 text-sm sm:text-base md:text-lg rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full max-w-sm mx-auto flex items-center justify-center text-center overflow-hidden"
->
-  <span className="block text-center leading-tight px-2 break-words whitespace-normal">
-    🔍 START MY ANONYMOUS INVESTIGATION
-  </span>
-</Button>
+                      onClick={() => setCurrentStep("form")}
+                      className="bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-3 sm:py-4 px-4 sm:px-6 text-sm sm:text-base md:text-lg rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full max-w-sm mx-auto flex items-center justify-center text-center overflow-hidden"
+                    >
+                      <span className="block text-center leading-tight px-2 break-words whitespace-normal">
+                        🔍 START MY ANONYMOUS INVESTIGATION
+                      </span>
+                    </Button>
                   </div>
 
                   {/* Bottom Privacy Notice */}
@@ -1618,13 +1617,13 @@ export default function SigiloX() {
 
                     {/* CTA Button - Fixed Text Overflow */}
                     <Button
-  onClick={() => setCurrentStep("generating")}
-  className="w-full bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-3 sm:py-4 text-sm sm:text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mb-4 sm:mb-6 overflow-hidden flex items-center justify-center text-center"
->
-  <span className="block text-center leading-tight px-2 break-words whitespace-normal">
-    🔓 UNLOCK COMPLETE EVIDENCE – SEE EVERYTHING
-  </span>
-</Button>
+                      onClick={() => setCurrentStep("generating")}
+                      className="w-full bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-3 sm:py-4 text-sm sm:text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mb-4 sm:mb-6 overflow-hidden flex items-center justify-center text-center"
+                    >
+                      <span className="block text-center leading-tight px-2 break-words whitespace-normal">
+                        🔓 UNLOCK COMPLETE EVIDENCE – SEE EVERYTHING
+                      </span>
+                    </Button>
 
                     {/* Reassurance */}
                     <div className="text-center">
@@ -1707,7 +1706,7 @@ export default function SigiloX() {
                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                   <div className="bg-gradient-to-r from-red-500 to-red-600 text-white p-3 sm:p-4 rounded-xl shadow-lg">
                     <div className="flex items-center gap-2 sm:gap-3">
-                      <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
+                      <AlertTriangle className="w-5 h-5 sm:w-6 sm:w-6 animate-pulse" />
                       <div>
                         <h3 className="font-bold text-sm sm:text-base">🚨 PROFILE FOUND - THEY ARE ACTIVE ON TINDER</h3>
                         <p className="text-xs sm:text-sm opacity-90">Last seen: Online now</p>
@@ -1717,7 +1716,7 @@ export default function SigiloX() {
 
                   <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 sm:p-4 rounded-xl shadow-lg">
                     <div className="flex items-center gap-2 sm:gap-3">
-                      <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6" />
+                      <AlertTriangle className="w-5 h-5 sm:w-6 sm:w-6" />
                       <div>
                         <h3 className="font-bold text-sm sm:text-base">⚠️ ATTENTION: ACTIVE PROFILE FOUND!</h3>
                         <p className="text-xs sm:text-sm opacity-90">
@@ -1759,7 +1758,7 @@ export default function SigiloX() {
                       {generateFakeProfiles().map((profile, index) => (
                         <div key={index} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-50 rounded-xl">
                           <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-pink-200 to-purple-200 rounded-xl flex items-center justify-center">
-                            <User className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
+                            <User className="w-6 h-6 sm:w-8 sm:w-8 text-purple-600" />
                           </div>
                           <div className="flex-1">
                             <h4 className="font-bold text-[#333333] text-sm sm:text-base">
@@ -1863,7 +1862,7 @@ export default function SigiloX() {
                     {/* Emergency Timer Card - Added before checkout button */}
                     <div className="bg-gradient-to-r from-red-500 to-red-600 text-white p-4 sm:p-6 rounded-xl shadow-lg mb-4 sm:mb-6">
                       <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
-                        <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 animate-pulse" />
+                        <AlertTriangle className="w-6 h-6 sm:w-8 sm:w-8 animate-pulse" />
                         <span className="font-bold text-lg sm:text-xl">THE REPORT WILL BE DELETED IN:</span>
                       </div>
                       <div className="text-center mb-3">
@@ -1877,7 +1876,12 @@ export default function SigiloX() {
 
                     {/* Direct Checkout Button - Fixed Text Overflow */}
                     <Button
-                      onClick={() => window.open("https://pay.mundpay.com/019827bf-dd10-703f-a9cf-64bad0eeb361?ref=", "_blank")}
+                      onClick={() =>
+                        window.open(
+                          "https://pay.mundpay.com/019827bf-dd10-703f-a9cf-64bad0eeb361?ref=ref_687e876c27c90",
+                          "_blank",
+                        )
+                      }
                       className="w-full bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-3 sm:py-4 text-sm sm:text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mb-4 sm:mb-6 overflow-hidden"
                     >
                       <span className="block text-center leading-tight px-2">🔓 UNLOCK MY COMPLETE REPORT</span>
