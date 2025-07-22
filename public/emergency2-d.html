@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAIT! Your Special Discount</title>
+
+    <!-- Includes Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Includes the Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ======================================================= -->
+    <!--     CÓDIGO MUNDPAY ADICIONADO AQUI                      -->
+    <!-- ======================================================= -->
+    <style>
+      .mndpay_container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          max-width: 36rem;
+          margin: 0 auto;
+          gap: 1rem;
+      }
+
+      .mndpay_btn {
+        background: #032203;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 18px;
+        font-weight: 100;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .mndpay_downsell {
+        background: #DC2626;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        color: #FFFFFF;
+        font-family: Arial;
+        font-size: 18px;
+        font-weight: 100;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      @media (min-width: 640px) {
+        .mndpay_container {
+          flex-direction: column;
+        }
+      }
+    </style>
+    
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .fade-in-y {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInY 0.6s ease-out forwards;
+        }
+        @keyframes fadeInY {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    
+    <div class="fixed top-0 left-0 right-0 z-50 bg-red-600 text-white py-3 px-4 text-center font-bold text-sm md:text-base shadow-lg">
+        <div class="flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" x2="12" y1="9" y2="13"></line><line x1="12" x2="12.01" y1="17" y2="17"></line></svg>
+            🚨 WAIT! THIS IS A ONE-TIME OFFER. DON'T CLOSE THIS PAGE.
+        </div>
+    </div>
+
+    <div class="pt-20 pb-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 fade-in-y">
+                <div class="inline-flex items-center gap-2 bg-red-100 text-red-800 px-4 py-2 rounded-full mb-6">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span class="font-semibold">LAST CHANCE DISCOUNT</span>
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                    <span class="text-red-600">WAIT! Before You Go...</span><br>Get Everything For Over 70% OFF
+                </h1>
+
+                <div class="bg-white rounded-lg p-6 shadow-xl border-2 border-red-200 mb-8">
+                     <!-- New Pricing Structure for Downsell -->
+                    <div class="text-3xl md:text-4xl font-bold text-gray-400 line-through mb-2">$47</div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-green-600 mb-4">$27</div>
+                    <div class="text-lg font-semibold text-gray-700">One-Time Payment - Last Chance!</div>
+
+                    <div class="flex items-center justify-center gap-2 text-red-600 mt-4">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span id="countdown-timer" class="text-xl font-bold">This special price expires in: 15:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 mb-8 fade-in-y" style="animation-delay: 0.2s;">
+                <div class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">A Final, Irrefutable Offer to Find the Truth</h2>
+                    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                        <p class="text-xl mb-6"><strong>We understand. The initial investment might have been a concern.</strong> But your desire to uncover the truth is clear, and we don't want a few dollars to stand in the way of your peace of mind.</p>
+                        <p class="text-lg mb-6">Because of this, and because we believe in helping you find the answers you deserve, we're making a final offer that is <strong class="text-red-600">only available on this page, right now.</strong></p>
+                        <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 mb-6">
+                            <p class="text-lg mb-4">You can get complete access to the <strong>Deleted Message & Hidden Content Recovery Tool</strong> not for the original <span class="line-through text-red-500">$100</span>, or even for the previous offer of <span class="line-through text-red-500">$47</span>, but for a single payment of just <span class="text-green-600 font-bold text-2xl">$27</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features remain the same to reinforce value -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                        <svg class="w-12 h-12 text-blue-600 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        <h3 class="font-bold text-lg mb-2">Deleted Messages</h3>
+                        <p class="text-gray-600">Recover all deleted conversations and WhatsApp chats</p>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
+                        <svg class="w-12 h-12 text-purple-600 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                        <h3 class="font-bold text-lg mb-2">Hidden Photos</h3>
+                        <p class="text-gray-600">Access deleted images and private photo exchanges</p>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-red-50 to-red-100 rounded-xl">
+                        <svg class="w-12 h-12 text-red-600 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 8l-6 4 6 4V8z"></path><rect x="2" y="6" width="14" height="12" rx="2" ry="2"></rect></svg>
+                        <h3 class="font-bold text-lg mb-2">Secret Videos</h3>
+                        <p class="text-gray-600">Discover deleted video content and voice messages</p>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-6 mb-8">
+                    <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        You Still Get Everything:
+                    </h3>
+                    <ul class="space-y-3 text-green-700">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>You'll receive a detailed guide to use the application effectively</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>30-day money-back guarantee included</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>24/7 customer support access</li>
+                    </ul>
+                </div>
+
+                <div class="text-center mb-8">
+                    <p class="text-lg text-gray-700 mb-6"><strong>This is your final opportunity.</strong> Click below to claim your massive discount before this page disappears forever.</p>
+                </div>
+
+                <!-- ======================================================= -->
+                <!-- ÁREA DE ALTERAÇÃO: MONETIZZE REMOVIDA, MUNDPAY INSERIDA -->
+                <!-- ======================================================= -->
+                <div class="mndpay_container">
+                  <a href="javascript:void(0)" data-mndpay="01982e88-cbd8-7197-9ec1-3e52c4fe72c0" class="mndpay_btn">I WANT TO SEE DELETED AND HIDDEN MESSAGES</a>
+                </div>
+            </div>
+
+            <div class="text-center text-gray-600 fade-in-y" style="animation-delay: 0.4s;">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <svg class="w-6 h-6 text-green-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Secure Payment</span>
+                    <span>•</span>
+                    <span>SSL Encrypted</span>
+                    <span>•</span>
+                    <span>Money-Back Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for the countdown timer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let timeLeft = 15 * 60; // 15 minutes in seconds
+            const countdownEl = document.getElementById('countdown-timer');
+
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            }
+
+            function updateCountdown() {
+                if (countdownEl) {
+                    countdownEl.textContent = `This special price expires in: ${formatTime(timeLeft)}`;
+                }
+                if (timeLeft > 0) {
+                    timeLeft--;
+                } else {
+                    clearInterval(timer);
+                    if (countdownEl) {
+                        countdownEl.textContent = "Offer Expired";
+                    }
+                }
+            }
+            
+            const timer = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Call once to avoid initial 1-second delay
+        });
+    </script>
+    <script src="https://upsell.mundpay.com/script.js"></script>
+</body>
+</html>
