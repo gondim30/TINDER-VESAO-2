@@ -2013,7 +2013,12 @@ export default function SigiloX() {
 
                     {/* CTA Button - Fixed Text Overflow */}
                     <Button
-                      onClick={() => (window.location.href = "/emergency")}
+                      onClick={() =>
+                        window.open(
+                          "https://pay.mundpay.com/019827bf-dd10-703f-a9cf-64bad0eeb361?ref=ref_687e876c27c90",
+                          "_blank",
+                        )
+                      }
                       className="w-full bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-4 sm:py-6 text-sm sm:text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mb-4 sm:mb-6 overflow-hidden"
                     >
                       <span className="block text-center leading-tight px-2">
