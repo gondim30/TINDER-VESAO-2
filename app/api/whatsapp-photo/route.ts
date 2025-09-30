@@ -1,11 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
 
 export async function POST(request: NextRequest) {
-  // JSON-default de retorno em caso de falha da API externa
   const fallbackPayload = {
     success: true,
-    result:
-      "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=",
+    result: "https://i.postimg.cc/gcNd6QBM/img1.jpg",
     is_photo_private: true,
   }
 
@@ -22,29 +20,18 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Remove caracteres não numéricos
     const cleanPhone = phone.replace(/[^0-9]/g, "")
 
-    // Adiciona código do país se não tiver (assumindo Brasil +55)
-    let fullNumber = cleanPhone
-    if (!cleanPhone.startsWith("55") && cleanPhone.length === 11) {
-      fullNumber = "55" + cleanPhone
-    }
-
-    const response = await fetch(
-      `https://primary-production-aac6.up.railway.app/webhook/request_photo?tel=${fullNumber}`,
-      {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          Origin: "https://whatspy.chat",
-        },
-        // timeout de 10 s (Edge Runtime aceita AbortController)
-        signal: AbortSignal.timeout?.(10_000),
+    const response = await fetch("https://w.imagens.pics/webhook/182dd", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        key: "wuAsuKHImXennBSFjt895tu984ut5",
       },
-    )
+      body: JSON.stringify({ number: cleanPhone }),
+      signal: AbortSignal.timeout?.(10_000),
+    })
 
-    // Se a API externa falhar, devolvemos payload padrão 200
     if (!response.ok) {
       console.error("API externa retornou status:", response.status)
       return NextResponse.json(fallbackPayload, {
@@ -53,15 +40,34 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    const data = await response.json()
+    const responseText = await response.text()
 
-    const isPhotoPrivate = !data?.link || data.link.includes("no-user-image-icon")
+    if (!responseText || responseText.trim() === "") {
+      return NextResponse.json(fallbackPayload, {
+        status: 200,
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+    }
+
+    let data
+    try {
+      data = JSON.parse(responseText)
+    } catch (parseError) {
+      return NextResponse.json(fallbackPayload, {
+        status: 200,
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+    }
+
+    const photoUrl = data?.foto || fallbackPayload.result
+    const isPhotoPrivate = !data?.foto || photoUrl === fallbackPayload.result
 
     return NextResponse.json(
       {
         success: true,
-        result: isPhotoPrivate ? fallbackPayload.result : data.link,
+        result: photoUrl,
         is_photo_private: isPhotoPrivate,
+        status: data?.Status || "",
       },
       {
         status: 200,
@@ -70,7 +76,6 @@ export async function POST(request: NextRequest) {
     )
   } catch (err) {
     console.error("Erro no webhook WhatsApp:", err)
-    // Nunca deixamos propagar status 500; devolvemos fallback
     return NextResponse.json(fallbackPayload, {
       status: 200,
       headers: { "Access-Control-Allow-Origin": "*" },
